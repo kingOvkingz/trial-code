@@ -1,0 +1,338 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+}
+nav {
+
+}
+.mobile {
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    color: transparent;
+    font-family: sans-serif, arial;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding: 30px;
+    backdrop-filter: blur(50px);
+    top: 0;
+}
+.mobile img {
+    width: 50vw;
+}
+.text-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 12vw;
+    text-transform: uppercase;
+    color: white;
+    justify-content: space-between;
+    height: 50vh;
+    gap: 10px;
+}
+.info {
+    font-size: 5vw;
+    font-weight: 400;
+}
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn button {
+    width: 50vw;
+    height: 15vw;
+    font-size: 10vw;
+    background: rgba(0, 0, 0, 0.808);
+    border: none;
+    border-radius: 4vw;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+}
+.btn>button::after {
+    position: absolute;
+    content: "";
+    width: 52vw;
+    height: 17vw;
+    background: conic-gradient(
+        blue,
+        green,
+        red,
+        blue
+    );
+    z-index: -1;
+    border-radius: 5vw;
+}
+.btn>button::before {
+    position: absolute;
+    content: "";
+    width: 52vw;
+    height: 17vw;
+    background: conic-gradient(
+        blue,
+        green,
+        red,
+        blue
+    );
+    z-index: -1;
+    border-radius: 5vw;
+    filter: blur(40px);
+}
+.green {
+    color: blue;
+    font-size: 13vw;
+}
+.red {
+    color: red;
+    font-size: 13vw;
+}
+.purple {
+    color: purple;
+    font-size: 6vw;
+    font-weight: 600;
+}
+.all {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+nav {
+    width: 100%;
+    border-bottom: 3px solid white;
+}
+.design {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.main {
+    background: black;
+    max-width: 800px;
+    width: 90vw;    
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.main::after, .main::before {
+    position: absolute;
+    content: "";
+    background: conic-gradient(
+        blue,
+        green,
+        red,
+        blue
+    );
+    max-width: 830px;
+    width: 94vw;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    z-index: -1;
+    backdrop-filter: blur(20rem);
+    animation: rotate 3s linear infinite;
+}
+.main::before {
+    filter: blur(50px);
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.display input {
+    width: 40vw;
+    height: 7vw;
+    font-size: 7vw;
+    outline: none;
+    background: white;
+    border: none;
+    border-radius: 1vw;
+}
+label {
+    color: white;
+    font-size: 4vw;
+    height: 5.5vw;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 430px;
+    width: 50vw;
+    aspect-ratio: 1/1;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.container button {
+    max-width: 130px;
+    max-height: 96px;
+    width: 14vw;
+    aspect-ratio: 1/0.8;
+    font-size: 6vw;
+    background: white;
+    border: none;
+    border-radius: 4vw;
+    font-weight: 600;
+}
+.mainB{
+    display: none;
+}
+.enter {
+    width: 6.5vw;
+    position: relative;
+    top: 4px;
+}
+.admin {
+    width: 4.55vw;
+    position: relative;
+    top: 6px;
+}
+.pc {
+    display: none;
+    width: 50vw;
+    height: 100vh;
+    flex-direction: column;
+    color: transparent;
+    font-family: sans-serif, arial;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.pc img {
+    width: 300px;
+}
+
+#user {
+    display: none;
+}
+@media (min-width: 1070px) {
+    body {
+        flex-direction: row;
+    }
+    nav {
+        display: none;
+    }
+    .all {
+        width: 60vw;
+    }
+    .main {
+       width: 500px;
+       height: 500px;
+    }
+    .main::after, .main::before {
+        width: 530px;
+    }
+    .display input {
+        width: 200px;
+        height: 60px;
+        font-size: 2rem;
+
+    }
+    label {
+        font-size: 1.8rem;
+        height: 35px;
+    }
+    .wrong {
+        animation: wrong 700ms;
+        position: relative;
+    }
+    @keyframes wrong {
+        10% {
+            transform: translate(10px, 0);
+        }
+        20%{
+            transform: translate(-10px, 0);
+        }
+        30%{
+            transform: translate(10px, 0);
+        }
+        40%{
+            transform: translate(-10px, 0);
+        }
+        50%{
+            transform: translate(10px, 0);
+        }
+        60% {
+            transform: translate(0px, 0);
+        }
+    }
+    .main-container {
+        width: 280px;
+        height: 300px;
+    }
+    .container button {
+        width: 90px;
+        aspect-ratio: 1/0.8;
+        font-size: 2rem;
+        border-radius: 20px;
+    }
+    .enter {
+        width: 30px;
+        position: relative;
+        top: 4px;
+    }
+    .admin {
+        width: 25px;
+    }
+    .mobile {
+        display: none;
+    }
+    .pc {
+        display: flex;
+    }
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: white;
+        justify-content: space-between;
+        height: 50vh;
+    }
+    .green {
+        color: transparent;
+        -webkit-text-stroke: 3px blue;
+        font-size: 3.5rem;
+    }
+    .red {
+        color: transparent;
+        -webkit-text-stroke: 3px red;
+        font-size: 3.5rem;
+    }
+    .purple {
+        color: transparent;
+        -webkit-text-stroke: 2px purple;
+        font-size: 2.5rem;
+    }
+    .info {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+}
